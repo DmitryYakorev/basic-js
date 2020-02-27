@@ -1,14 +1,14 @@
 module.exports = function countCats(MD_array) {
   let n = 0;
-  throw 'Not implemented';
+  //throw 'Not implemented';
   for (i = 0;i < MD_array.length; i++){
     for (let index = 0; index < MD_array[i].length; index++) {
       if (MD_array[i][index] === '^^') {
-        n++
-      }
+        n++;
+      };
      
-    }
+    };
   };
-  console.log(n);
+ //console.log("n=",n);
   return n
 };
