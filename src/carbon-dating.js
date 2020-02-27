@@ -15,7 +15,7 @@ res = Math.ceil(Math.log(MODERN_ACTIVITY / Number(Activity)) * HALF_LIFE_PERIOD 
 if ((res === Infinity) || (res === NaN) ) {
   return false;
 }
-console.log('!',Activity);
-console.log('res=',res,Number(Activity));
+//console.log('!',Activity);
+//console.log('res=',res,Number(Activity));
 return res;
 };
