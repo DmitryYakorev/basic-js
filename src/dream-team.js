@@ -7,6 +7,9 @@ module.exports = function createDreamTeam(team) {
     if (typeof team[i] != 'string') {
       continue;
     }
-    arr.push(team[i].trim().toUpperCase());
+    array.push(team[i]
+   
+    .toUpperCase()
+    .trim());
   }
 };
