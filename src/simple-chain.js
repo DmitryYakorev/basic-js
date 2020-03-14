@@ -4,13 +4,13 @@ const chainMaker = {
     return this.el.length;
   },
   addLink(value) {
-    console.log("!!",value);
+   // console.log("!!",value);
     /*if (value === undefined || isNaN(value) ) {
       value = ''*/
     /*else {
       value+='';
     };*/
-    console.log("!",value);
+   // console.log("!",value);
     if (value === null  ) {
       value = "null"};
     this.el.push(value);
@@ -24,7 +24,7 @@ const chainMaker = {
 
   }
   
-    console.log("-",position);
+   // console.log("-",position);
     this.el.splice(position - 1, 1);
     return this;
   }
@@ -35,14 +35,9 @@ const chainMaker = {
   },
   finishChain() {
     let temp = "";
-   // for (i = 0; i < this.el.length; i++) {
-     // temp += "( ${this.el[i]} )";
-      // if(i < this.el.length - 1) {
-        // temp += "~~";
-    //};
-  //};
+   
   temp = Array.prototype.join.call(this.el," )~~( ");
-  console.log("+",temp);
+  //console.log("+",temp);
     this.el = [];
 temp = "( "+temp+" )";
     return temp ;

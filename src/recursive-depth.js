@@ -1,6 +1,11 @@
 module.exports = class DepthCalculator {
-    calculateDepth(/* arr */) {
-        throw 'Not implemented';
-        // remove line with error and write your code here
+    calculateDepth( arr ) {
+        i = 1;
+        function flattenDeep(arr) {
+            
+            return arr.reduce((acc, val) => Array.isArray(val) ? {acc.concat(flattenDeep(val));i++;} : acc.concat(val), []);
+         }
+         flattenDeep(arr);
+         return i
     }
 };
