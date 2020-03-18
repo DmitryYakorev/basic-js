@@ -1,12 +1,17 @@
 class VigenereCipheringMachine {
-    encrypt() {
-        throw 'Not implemented';
-        // remove line with error and write your code here
+ //aaaaaaaaaaaaaaaaa
+    encrypt(notice,key_word) {
+        if (!notice || !key_word) {
+            throw new Error();
+        }
+        //bbbbbbbbbbbbbbbbb
     }
 
-    decrypt() {
-        throw 'Not implemented';
-        // remove line with error and write your code here
+    decrypt(notice,key_word) {
+        if (!notice || !key_word) {
+            throw new Error();
+        }
+        //ccccccccccccccccccccccc
     }
 }
 
