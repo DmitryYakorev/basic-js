@@ -1,4 +1,7 @@
 module.exports = function transform(arr) {
+    
+function notSpecial (el){
+    return ( el !== '--double-next' && el !== '--double-prev' && el !== '--discard-next' && el !== '--discard-prev'); }
     if (!arr) throw 'undefined or null';
     if (!Array.isArray(arr)) throw 'not an array';
     let res = [];
@@ -37,7 +40,3 @@ module.exports = function transform(arr) {
     return res;
 };
 
-function notSpecial (el){
-    return (el !== '--discard-next' && el !== '--discard-prev' &&
-            el !== '--double-next' && el !== '--double-prev'); 
-}
