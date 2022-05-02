@@ -26,7 +26,9 @@ class VigenereCipheringMachine {
       console.log(this);
   }
   encrypt(m, k) {
-    if(!m || !k) throw 'argument absent';
+    if(m === undefined || k === undefined) {
+      throw new Error('Incorrect arguments!');
+    }
       k = k.toUpperCase();
       let temp = m.split('');
       m = m.replace(/[^a-zA-Z]+/g,'').toUpperCase();
@@ -56,7 +58,9 @@ class VigenereCipheringMachine {
       return temp.join('');
   }
   decrypt(en, k) {
-    if(!en || !k) throw 'argument absent';
+    if(en === undefined || k === undefined) {
+      throw new Error('Incorrect arguments!');
+    }
     let temp = en.split('');
     en = en.replace(/[^a-zA-Z]+/g,'').toUpperCase();
     k = k.toUpperCase();
