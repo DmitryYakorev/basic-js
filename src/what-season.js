@@ -13,8 +13,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getSeason( date ) {
   if (!date) return 'Unable to determine the time of year!';
-   // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
-   if (date.hasOwnProperty('Date')) throw new Error('Invalid date!');
+
+   if (Object.getOwnPropertyNames(date).length > 0) throw new Error('Invalid date!');
   
 
 
