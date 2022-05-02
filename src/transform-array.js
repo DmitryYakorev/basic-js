@@ -16,32 +16,41 @@ const { NotImplementedError } = require('../extensions/index.js');
 function transform( arr ) {
   function notSpecial (el){
     return ( el !== '--double-next' && el !== '--double-prev' && el !== '--discard-next' && el !== '--discard-prev'); }
+    console.log(arr);
     if (!arr) throw Error("'arr' parameter must be an instance of the Array!");
     if (!Array.isArray(arr)) throw Error("'arr' parameter must be an instance of the Array!");
+  
     let res = [];
-    for(let i = 0; i < arr.length;i++){
-        if(typeof(arr[i])=='string'){
-            switch(arr[i]){
+    let flag = false;
+    for(let i = 0; i < arr.length;++i) {
+        if(typeof(arr[i]) === 'string') {
+            switch(arr[i]) {
+                case '--discard-next':
+                    if(i < arr.length - 1 && notSpecial(arr[i + 1])) {
+                        i++;
+                        flag = true;
+                    }
+                    break;
+                case '--discard-prev':
+                    if (res.length > 0 && !flag) res.pop();
+                    
+                    break;
                 case '--double-next':
-                    if(i < arr.length - 1 && notSpecial(arr[i+1])) {
-                        res.push(arr[i+1]);
+                    if(i < arr.length - 1 && notSpecial(arr[i + 1])) {
+                        res.push(arr[i + 1]);
                         
                     }
                     break;
                 case '--double-prev':
                     
-                    if ( i > 0) res.push(arr[i-1]);
+                    if ( i > 0 && !flag) res.push(arr[i - 1]);
                     break;
-                case '--discard-next':
-                    if(i < arr.length - 1 && notSpecial(arr[i+1])) i++;
-                    break;
-                case '--discard-prev':
-                    if (res.length > 0) res.pop();
-                    
-                    break;
+               
           
                 default:
-                    res.push(arr[i]);
+                    if (!flag) {
+                        res.push(arr[i]);}
+                        flag = false;
                     break;
             }
         }
