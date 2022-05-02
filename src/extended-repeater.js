@@ -20,11 +20,11 @@ function repeater( str, options ) {
   if(str === null) str = 'null';    
     if(str === undefined) str = '';   
     //console.log('1',str);
-  str = str.toString(); 
+  //str = str.toString(); 
   //options = options.toString();
     let repeatTimes = (options['repeatTimes'] !== undefined)? options.repeatTimes : 0;
     let separator = (options['separator'] !== undefined)? options.separator : '+';
-    if (options['addition'] !== undefined) if (options['addition'] !== null) addition = options.addition.toString()
+    if (options['addition'] !== undefined) if (options['addition'] !== null) addition = options.addition
     else addition = 'null'
     else addition = '';
     
