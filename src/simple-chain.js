@@ -17,7 +17,7 @@ const chainMaker = {
   removeLink( position ) {
     if (position < 1 || position > this.el.length || typeof position !== 'number') {
       this.el = [];
-      throw new Error();
+      throw new Error("You can't remove incorrect link!");
 
   }
   
